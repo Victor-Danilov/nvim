@@ -5,8 +5,7 @@ local plugins = {
   "nvim-tree",
   "telescope",
   "lsp_config",
-  "completion",
-  "digraph"
+  "completion"
 --  "coc"
   -- Aggiungi qui altri plugin
 }
