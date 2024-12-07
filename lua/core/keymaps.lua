@@ -21,3 +21,13 @@ vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
 vim.o.foldmethod = "expr"
 vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 vim.o.foldlevel = 99
+vim.o.foldcolumn = "1" -- Aggiunge una colonna a sinistra per indicare i fold
+vim.o.foldenable = true -- Abilita i fold automaticamente
+
+
+-- folding keymaps
+vim.keymap.set('n', '<Leader>zM', 'zM') -- Chiude tutti i fold
+vim.keymap.set('n', '<Leader>zR', 'zR') -- Apre tutti i fold
+vim.keymap.set('n', '<Leader>zc', 'zc') -- Chiude il fold sotto il cursore
+vim.keymap.set('n', '<Leader>zo', 'zo') -- Apre il fold sotto il cursore
+
