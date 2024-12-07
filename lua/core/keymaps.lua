@@ -17,3 +17,7 @@ vim.cmd("set number")
 vim.api.nvim_set_option("clipboard","unnamed")
 vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
 
+-- folding
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+vim.o.foldlevel = 99

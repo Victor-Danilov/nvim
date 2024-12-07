@@ -14,46 +14,55 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
     -- THEMES
-    use({
-        'rose-pine/neovim',
-        as = 'rose-pine',
-    })
+    use 'rose-pine/neovim'
     use 'ellisonleao/gruvbox.nvim'
 ---------------------------------------------------
+    -- Nvim-Tree
     use {
         "nvim-tree/nvim-tree.lua",
         requires = {"nvim-tree/nvim-web-devicons",
         },
     }
+
+    -- Lualine
     use 'nvim-lualine/lualine.nvim'
 
+    -- Telescope
     use {
         "nvim-telescope/telescope.nvim", tag = '0.1.6',
         -- or                            , branch = '0.1.x',
         requires = { {"nvim-lua/plenary.nvim"} }
     }
+
+    -- Digraphs 
+    use {
+        'protex/better-digraphs.nvim',
+        requires = { 'nvim-telescope/telescope.nvim' }
+    }
+
+    -- Treesitter
     use ('nvim-treesitter/nvim-treesitter', {run = ":TSUpdate"})
+
+    -- Playground
     use 'nvim-treesitter/playground'
-    use 'nvim-lua/plenary.nvim'
+
+    -- LSP mason
     use {
         "williamboman/mason.nvim", run = ":MasonUpdate",
         "williamboman/mason-lspconfig.nvim",
         "neovim/nvim-lspconfig"
     }
-    -- completion
+
+    -- Completion
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-nvim-lsp'
     use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'
     use 'rafamadriz/friendly-snippets'
 
-
+    -- Pandoc for making pdf
     use 'vim-pandoc/vim-pandoc'
     use 'vim-pandoc/vim-pandoc-syntax'
-    --use 'neoclide/coc.nvim'
-    -- My plugins here
-    -- use 'foo1/bar1.nvim'
-    -- use 'foo2/bar2.nvim'
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
