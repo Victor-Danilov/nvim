@@ -19,6 +19,8 @@ vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
 
 -- folding
 vim.o.foldmethod = "expr"
+vim.o.foldmethod = "indent"
+vim.o.foldmethod = "syntax"
 vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 vim.o.foldlevel = 99
 vim.o.foldcolumn = "1" -- Aggiunge una colonna a sinistra per indicare i fold
